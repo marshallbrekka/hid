@@ -19,6 +19,10 @@ type DeviceInfo struct {
 	Manufacturer string
 	// Product contains the product name of the device
 	Product string
+	// Usage Page for this Device/Interface (Windows/Mac only)
+	UsagePage uint16
+	// Usage for this Device/Interface (Windows/Mac only)
+	Usage uint16
 
 	InputReportLength   uint16
 	OutputReportLength  uint16

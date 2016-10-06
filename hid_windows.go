@@ -206,6 +206,8 @@ func ByPath(devicePath string) (*DeviceInfo, error) {
 		var caps C.HIDP_CAPS
 
 		if C.HidP_GetCaps(preparsedData, &caps) == C.HIDP_STATUS_SUCCESS {
+			devInfo.UsagePage = unint16(caps.UsagePage)
+			devInfo.Usage = unint16(caps.Usage)
 			devInfo.InputReportLength = uint16(caps.InputReportByteLength)
 			devInfo.FeatureReportLength = uint16(caps.FeatureReportByteLength)
 			devInfo.OutputReportLength = uint16(caps.OutputReportByteLength)
